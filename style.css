@@ -1,667 +1,731 @@
-body {
-    padding: 0;
+* {
     margin: 0;
+    padding: 0;
     box-sizing: border-box;
+}
+
+:root {
+    --nasa-blue: #0B3D91;
+    --nasa-red: #FC3D21;
+    --nasa-dark: #0a0e29;
+    --nasa-light: #1a237e;
+    --text-primary: #ffffff;
+    --text-secondary: #e0e0e0;
+    --text-muted: #a0a0a0;
+    --bg-dark: #0a0e29;
+    --bg-card: rgba(11, 61, 145, 0.1);
+    --border-color: rgba(252, 61, 33, 0.2);
+    --gradient-primary: linear-gradient(135deg, #0B3D91 0%, #1a237e 100%);
+    --gradient-dark: linear-gradient(135deg, #0a0e29 0%, #1a237e 100%);
+}
+
+body {
     font-family: 'Poppins', sans-serif;
-    background-color: #0a0e29;
-    color: #fff;
+    background-color: var(--bg-dark);
+    color: var(--text-primary);
+    line-height: 1.6;
+    overflow-x: hidden;
 }
 
-/* HEADER */
-.headerContainer {
-    background-color: #0B3D91;
-    border-bottom: 2px solid #FC3D21;
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
 }
-.header {
-    height: 80px;
-    background-color: #0B3D91;
-    color: #fff;
+
+/* NAVBAR */
+.navbar {
+    background: rgba(11, 61, 145, 0.95);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--border-color);
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    padding: 1rem 0;
+}
+
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 30px 100px 0 100px;
-    max-width: 1300px;
-    margin: auto;
 }
 
-.headerLinks {
-    width: 60%;
-}
-
-.headerLinks{
+.nasa-brand {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    list-style: none;
+    flex-direction: column;
+    align-items: flex-start;
 }
 
-.headerLinks a {
-    text-decoration: none;
-    color: #fff;
-    padding: 10px 15px;
-    border-radius: 50px;
-    transition: .3s;
-    font-weight: 500;
-}
-
-.headerLinks a:hover {
-    background-color: #1A56C7;
-}
-
-.nasa-logo {
-    font-size: 32px;
+.nasa-text {
+    font-size: 1.8rem;
     font-weight: 700;
-    color: #fff;
-    text-transform: uppercase;
+    color: var(--text-primary);
     letter-spacing: 2px;
 }
-/* END HEADER */
 
-/* LANDING PAGE */
-.landingPageContainer {
-    background: linear-gradient(135deg, #0B3D91 0%, #1a237e 100%);
-    border-radius: 0 0 100px 100px;
+.division {
+    font-size: 0.8rem;
+    color: var(--text-secondary);
+    font-weight: 400;
+    letter-spacing: 1px;
+}
+
+.nav-menu {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+
+.nav-link {
+    color: var(--text-secondary);
+    text-decoration: none;
+    font-weight: 500;
+    padding: 0.5rem 1rem;
+    border-radius: 25px;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.nav-link:hover,
+.nav-link.active {
+    color: var(--text-primary);
+    background: rgba(252, 61, 33, 0.1);
+}
+
+.nav-link.active::after {
+    content: '';
+    position: absolute;
+    bottom: -8px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 4px;
+    height: 4px;
+    background: var(--nasa-red);
+    border-radius: 50%;
+}
+
+.nav-btn {
+    background: var(--nasa-red);
+    color: white;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: 25px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.nav-btn:hover {
+    background: #D1321A;
+    transform: translateY(-2px);
+}
+
+/* HERO SECTION */
+.hero {
+    background: var(--gradient-primary);
+    padding: 120px 0 80px;
     position: relative;
     overflow: hidden;
 }
-.landingPageContainer::before {
-    content: "";
+
+.hero::before {
+    content: '';
     position: absolute;
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
-    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="20" cy="30" r="1" fill="white" opacity="0.7"/><circle cx="70" cy="20" r="0.8" fill="white" opacity="0.5"/><circle cx="40" cy="70" r="1.2" fill="white" opacity="0.8"/><circle cx="85" cy="60" r="0.9" fill="white" opacity="0.6"/><circle cx="10" cy="50" r="1.1" fill="white" opacity="0.9"/></svg>') repeat;
-}
-.landingPage {
-    display: flex;
-    background-color: transparent;
-    color: #fff;
-    padding: 100px 0;
-    max-width: 1300px;
-    margin: auto;
-    position: relative;
-    z-index: 1;
+    background: 
+        radial-gradient(circle at 20% 80%, rgba(252, 61, 33, 0.1) 0%, transparent 50%),
+        radial-gradient(circle at 80% 20%, rgba(11, 61, 145, 0.2) 0%, transparent 50%);
 }
 
-.landingPage .slogan {
-    text-transform: uppercase;
+.hero-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+}
+
+.hero-badge {
+    display: inline-block;
+    background: rgba(252, 61, 33, 0.2);
+    color: var(--nasa-red);
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    border: 1px solid var(--border-color);
+}
+
+.hero-title {
+    font-size: 3.5rem;
     font-weight: 700;
-    font-size: 48px;
-    margin-bottom: 20px;
-    background: linear-gradient(90deg, #fff, #FC3D21);
+    line-height: 1.2;
+    margin-bottom: 1.5rem;
+    background: linear-gradient(135deg, #fff 0%, var(--nasa-red) 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
 
-.landingPage .welcome {
-    font-size: x-large;
-    height: 10px;
-    color: #FC3D21;
-    font-weight: 600;
-}
-
-.landingPage .description {
-    color: #e0e0e0;
-    width: 80%;
-    font-weight: 400;
+.hero-description {
+    font-size: 1.2rem;
+    color: var(--text-secondary);
+    margin-bottom: 2rem;
     line-height: 1.6;
-    font-size: 18px;
 }
 
-.searchBar {
+.search-container {
     position: relative;
-    margin-top: 50px;
-}
-
-.searchBar input {
+    background: rgba(255, 255, 255, 0.1);
     border-radius: 50px;
-    border: 2px solid #FC3D21;
-    outline: none;
-    width: 40%;
-    height: 50px;
-    font-size: large;
-    padding-left: 20px;
-    background: rgba(255,255,255,0.1);
-    color: white;
+    padding: 1rem 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    border: 1px solid var(--border-color);
+    backdrop-filter: blur(10px);
 }
 
-.searchBar input::placeholder {
-    font-size:medium;
-    color: #ccc;
+.search-container i {
+    color: var(--text-muted);
 }
 
-.btn {
-    border-radius: 50px;
-    height: 52px;
+.search-container input {
+    flex: 1;
+    background: none;
     border: none;
-    font-weight:600;
-    font-size: medium;
-    padding: 0 20px;
-    background-color: #FC3D21;
-    color: #fff;
-    text-transform: uppercase;
-    transition: .3s;
+    color: var(--text-primary);
+    font-size: 1rem;
+    outline: none;
+}
+
+.search-container input::placeholder {
+    color: var(--text-muted);
+}
+
+.search-btn {
+    background: var(--nasa-red);
+    color: white;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: 25px;
+    font-weight: 600;
     cursor: pointer;
+    transition: all 0.3s ease;
 }
 
-.btn:hover {
-    background-color: #D1321A;
+.search-btn:hover {
+    background: #D1321A;
     transform: translateY(-2px);
-    box-shadow: 0 4px 8px rgba(252, 61, 33, 0.3);
 }
 
-.searchBar .searchBtn {
-    position: absolute;
-    left: 300px;
+.hero-stats {
+    display: flex;
+    gap: 3rem;
+    margin-top: 3rem;
 }
 
-.leftSide {
-    padding-top: 30px;
-    flex: 8;
+.stat {
+    text-align: center;
 }
 
-.imageContainer {
-    flex: 4;
+.stat-number {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--nasa-red);
+    margin-bottom: 0.5rem;
+}
+
+.stat-label {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    font-weight: 500;
+}
+
+.hero-visual {
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-.space-image {
-    font-size: 200px;
+.science-graphic {
+    position: relative;
+    width: 300px;
+    height: 300px;
+}
+
+.molecule, .orbit, .cell {
+    position: absolute;
+    border-radius: 50%;
+}
+
+.molecule {
+    width: 100px;
+    height: 100px;
+    background: rgba(252, 61, 33, 0.3);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     animation: float 6s ease-in-out infinite;
 }
 
+.orbit {
+    width: 200px;
+    height: 200px;
+    border: 2px dashed rgba(255, 255, 255, 0.3);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    animation: rotate 20s linear infinite;
+}
+
+.cell {
+    width: 60px;
+    height: 60px;
+    background: rgba(11, 61, 145, 0.5);
+    top: 20%;
+    left: 20%;
+    animation: pulse 4s ease-in-out infinite;
+}
+
 @keyframes float {
-    0% { transform: translateY(0px); }
-    50% { transform: translateY(-20px); }
-    100% { transform: translateY(0px); }
+    0%, 100% { transform: translate(-50%, -50%) scale(1); }
+    50% { transform: translate(-50%, -55%) scale(1.05); }
 }
 
-/* END LANDING PAGE */
-
-/* RESEARCH AREAS */
-.trendingContainer {
-    margin: auto;
-    max-width: 1300px;
-    margin-top: 100px;
+@keyframes rotate {
+    from { transform: translate(-50%, -50%) rotate(0deg); }
+    to { transform: translate(-50%, -50%) rotate(360deg); }
 }
 
-.trendingHeader, .mostHeader {
+@keyframes pulse {
+    0%, 100% { transform: scale(1); opacity: 0.7; }
+    50% { transform: scale(1.1); opacity: 1; }
+}
+
+/* SECTIONS */
+.section-header {
+    text-align: center;
+    margin-bottom: 4rem;
+}
+
+.section-label {
+    display: inline-block;
+    color: var(--nasa-red);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 1rem;
+    font-size: 0.9rem;
+}
+
+.section-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    color: var(--text-primary);
+}
+
+.section-description {
+    font-size: 1.1rem;
+    color: var(--text-secondary);
+    max-width: 600px;
+    margin: 0 auto;
+    line-height: 1.6;
+}
+
+/* RESEARCH GRID */
+.research-section {
+    padding: 80px 0;
+    background: var(--bg-dark);
+}
+
+.research-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 2rem;
+}
+
+.research-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: 20px;
+    padding: 2rem;
+    text-decoration: none;
+    color: inherit;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.research-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(252, 61, 33, 0.1), transparent);
+    transition: left 0.5s;
+}
+
+.research-card:hover::before {
+    left: 100%;
+}
+
+.research-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--nasa-red);
+    box-shadow: 0 10px 30px rgba(252, 61, 33, 0.2);
+}
+
+.card-icon {
+    width: 60px;
+    height: 60px;
+    background: rgba(252, 61, 33, 0.1);
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1.5rem;
+    color: var(--nasa-red);
+    font-size: 1.5rem;
+}
+
+.research-card h3 {
+    font-size: 1.3rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    color: var(--text-primary);
+}
+
+.research-card p {
+    color: var(--text-secondary);
+    margin-bottom: 1.5rem;
+    line-height: 1.6;
+}
+
+.card-footer {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding-bottom: 40px;
+    margin-top: auto;
 }
 
-.trendingHeader h1, .mostHeader h1, .resourcesHeader h1, .referencesHeader h1 {
-    margin-top: 0;
-    font-size: 36px;
-}
-
-.trendingContainer span, .mostContainer span, .resourcesHeader span, .referencesHeader span {
-    text-transform: uppercase;
-    color: #FC3D21;
+.research-count {
+    color: var(--nasa-red);
     font-weight: 600;
-    letter-spacing: 1px;
+    font-size: 0.9rem;
 }
 
-.trendingCard, .mostCards, .resourcesGrid {
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    gap: 20px;
+.research-card .fa-arrow-right {
+    color: var(--nasa-red);
+    transition: transform 0.3s ease;
 }
 
-.trendingCard .card {
-    position: relative;
-    background: rgba(11, 61, 145, 0.2);
-    border-radius: 20px;
-    padding: 20px;
-    width: calc(33.333% - 20px);
-    margin-bottom: 20px;
-    border: 1px solid rgba(252, 61, 33, 0.3);
-    transition: all 0.3s ease;
-    min-height: 180px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+.research-card:hover .fa-arrow-right {
+    transform: translateX(5px);
 }
 
-/* CLICKABLE CARDS */
-.card-link {
-    text-decoration: none;
-    color: inherit;
-    display: block;
-    width: calc(33.333% - 20px);
-    margin-bottom: 20px;
+/* STUDIES SECTION */
+.studies-section {
+    padding: 80px 0;
+    background: var(--gradient-dark);
 }
 
-.card-link:hover .card {
-    transform: translateY(-10px);
-    box-shadow: 0 15px 30px rgba(252, 61, 33, 0.3);
-    border-color: #FC3D21;
-    cursor: pointer;
+.studies-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 2rem;
 }
 
-.trendingCard .card:hover {
-    transform: none;
-    box-shadow: none;
-    border-color: rgba(252, 61, 33, 0.3);
-}
-
-.research-icon {
-    font-size: 60px;
-    text-align: center;
-    margin-bottom: 15px;
-}
-
-.trendingCard .card .cardInfo {
-    position: relative;
-    width: 100%;
-    background-color: transparent;
-    border-radius: 0;
-    padding-top: 0;
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-}
-
-.trendingCard .card .cardName {
-    padding: 0;
-    flex: 1;
-}
-
-.trendingCard .cardName h3 {
-    margin-top: 10px;
-    margin-bottom: 5px;
-    font-size: 16px;
-    line-height: 1.3;
-}
-
-.trendingCard .cardName p {
-    color: #FC3D21;
-    margin-bottom: 0;
-    font-weight: 500;
-    font-size: 14px;
-}
-
-.science-icon {
-    font-size: 30px;
-}
-
-.trendingCard .cardInfo .icon {
-    margin-right: 0;
-    margin-top: 5px;
-}
-
-/* END RESEARCH AREAS */
-
-/* RECENT STUDIES */
-.mostContainer {
-    background: linear-gradient(135deg, #0a0e29 0%, #1a237e 100%);
-    margin-top: 100px;
-    padding: 50px;
-    border-radius: 100px;
-    border: 1px solid rgba(252, 61, 33, 0.2);
-}
-
-.mostContainer .mostPlayed {
-    max-width: 1300px;
-    margin: auto;
-}
-
-.mostCards .card {
-    background: rgba(11, 61, 145, 0.2);
+.study-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
     border-radius: 20px;
     overflow: hidden;
-    width: calc(33.333% - 20px);
-    margin-bottom: 30px;
-    border: 1px solid rgba(252, 61, 33, 0.3);
     transition: all 0.3s ease;
 }
 
-.mostCards .card:hover {
+.study-card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 5px 15px rgba(252, 61, 33, 0.2);
+    border-color: var(--nasa-red);
+    box-shadow: 0 10px 30px rgba(252, 61, 33, 0.2);
 }
 
 .study-image {
-    font-size: 80px;
-    text-align: center;
-    padding: 20px;
-    background: rgba(11, 61, 145, 0.3);
-}
-
-.mostCards .cardInfo {
+    height: 120px;
+    background: var(--gradient-primary);
     display: flex;
-    flex-direction: column;
     align-items: center;
-    padding: 20px;
-}
-
-.mostCards .cardInfo .genre {
-    margin-bottom: 5px;
-    color: #FC3D21;
-    font-weight: 500;
-}
-
-.mostCards .cardInfo .cardName {
-    text-align: center;
-    margin-bottom: 15px;
-    font-size: 16px;
-    line-height: 1.3;
-}
-
-/* END RECENT STUDIES */
-
-/* NASA RESOURCES */
-.resourcesContainer {
-    margin: auto;
-    max-width: 1300px;
-    margin-top: 100px;
-    padding: 0 20px;
-}
-
-.resourcesHeader {
-    text-align: center;
-    margin-bottom: 50px;
-}
-
-.resourcesHeader h1 {
-    margin-bottom: 20px;
-}
-
-.resourcesDescription {
-    color: #e0e0e0;
-    font-size: 18px;
-    max-width: 800px;
-    margin: 0 auto;
-    line-height: 1.6;
-}
-
-.resourcesGrid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 30px;
-    margin-top: 40px;
-}
-
-.resourceCard {
-    background: rgba(11, 61, 145, 0.2);
-    border-radius: 20px;
-    padding: 30px;
-    border: 1px solid rgba(252, 61, 33, 0.3);
-    transition: all 0.3s ease;
-    display: flex;
-    flex-direction: column;
-    height: 100%;
-}
-
-.resourceCard:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 15px 30px rgba(252, 61, 33, 0.2);
-    border-color: #FC3D21;
-}
-
-.resource-icon {
-    font-size: 60px;
-    text-align: center;
-    margin-bottom: 20px;
-}
-
-.resourceCard h3 {
-    color: #fff;
-    font-size: 22px;
-    margin-bottom: 15px;
-    text-align: center;
-}
-
-.resourceCard p {
-    color: #e0e0e0;
-    line-height: 1.6;
-    margin-bottom: 25px;
-    flex-grow: 1;
-}
-
-.resourceLinks {
-    display: flex;
-    gap: 10px;
     justify-content: center;
-    flex-wrap: wrap;
+    color: white;
+    font-size: 2.5rem;
 }
 
-.resource-link {
+.study-content {
+    padding: 2rem;
+}
+
+.study-category {
     display: inline-block;
-    background-color: #FC3D21;
-    color: white;
-    padding: 10px 20px;
+    background: rgba(252, 61, 33, 0.1);
+    color: var(--nasa-red);
+    padding: 0.25rem 0.75rem;
+    border-radius: 15px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+
+.study-content h3 {
+    font-size: 1.3rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    color: var(--text-primary);
+}
+
+.study-content p {
+    color: var(--text-secondary);
+    margin-bottom: 1.5rem;
+    line-height: 1.6;
+}
+
+.study-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+    font-size: 0.9rem;
+    color: var(--text-muted);
+}
+
+.study-btn {
+    width: 100%;
+    background: transparent;
+    color: var(--nasa-red);
+    border: 2px solid var(--nasa-red);
+    padding: 0.75rem 1.5rem;
     border-radius: 25px;
-    text-decoration: none;
-    font-size: 14px;
-    font-weight: 500;
+    font-weight: 600;
+    cursor: pointer;
     transition: all 0.3s ease;
 }
 
-.resource-link:hover {
-    background-color: #D1321A;
+.study-btn:hover {
+    background: var(--nasa-red);
+    color: white;
     transform: translateY(-2px);
 }
 
-/* END NASA RESOURCES */
-
-/* REFERENCES SECTION */
-.referencesContainer {
-    margin: auto;
-    max-width: 1300px;
-    margin-top: 100px;
-    padding: 50px 20px;
-    background: linear-gradient(135deg, #0a0e29 0%, #1a237e 100%);
-    border-radius: 100px;
-    border: 1px solid rgba(252, 61, 33, 0.2);
+/* RESOURCES SECTION */
+.resources-section {
+    padding: 80px 0;
+    background: var(--bg-dark);
 }
 
-.referencesHeader {
-    text-align: center;
-    margin-bottom: 50px;
-}
-
-.referencesHeader h1 {
-    margin-bottom: 20px;
-}
-
-.referencesDescription {
-    color: #e0e0e0;
-    font-size: 18px;
-    max-width: 800px;
-    margin: 0 auto;
-    line-height: 1.6;
-}
-
-.referencesList {
+.resources-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 40px;
-    margin-top: 40px;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
 }
 
-.referenceCategory {
-    background: rgba(11, 61, 145, 0.2);
+.resource-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
     border-radius: 20px;
-    padding: 30px;
-    border: 1px solid rgba(252, 61, 33, 0.3);
+    padding: 2rem;
+    transition: all 0.3s ease;
 }
 
-.referenceCategory h3 {
-    color: #FC3D21;
-    margin-bottom: 20px;
-    font-size: 22px;
-    border-bottom: 2px solid rgba(252, 61, 33, 0.3);
-    padding-bottom: 10px;
+.resource-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--nasa-red);
+    box-shadow: 0 10px 30px rgba(252, 61, 33, 0.2);
 }
 
-.referenceCategory ul {
-    list-style-type: none;
-    padding: 0;
-}
-
-.referenceCategory li {
-    color: #e0e0e0;
-    padding: 10px 0;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-    line-height: 1.6;
-}
-
-.referenceCategory li:last-child {
-    border-bottom: none;
-}
-
-.referenceCategory li:before {
-    content: "•";
-    color: #FC3D21;
-    font-weight: bold;
-    display: inline-block;
-    width: 1em;
-    margin-left: -1em;
-}
-
-/* END REFERENCES SECTION */
-
-/* FOOTER */
-.footerContainer {
-    background: linear-gradient(135deg, #0B3D91 0%, #1a237e 100%);
-    height: 150px;
-    border-radius: 100px 100px 0 0;
-    margin-top: 100px;
+.resource-header {
     display: flex;
     align-items: center;
-    border-top: 2px solid #FC3D21;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
 }
 
-.footer {
-    max-width: 1300px;
-    margin: auto;
-    text-align: center;
-    color: #fff;
-    font-weight: 500;
-    font-size: larger;
+.resource-header i {
+    font-size: 2rem;
+    color: var(--nasa-red);
 }
 
-/* END FOOTER */
+.resource-header h3 {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--text-primary);
+}
 
-/* FORM */
-.formContainer {
+.resource-card p {
+    color: var(--text-secondary);
+    margin-bottom: 2rem;
+    line-height: 1.6;
+}
+
+.resource-links {
     display: flex;
-    padding: 40px;
-    margin: auto;
-    justify-content: center;
-    max-width: 1300px;
-    min-height: 70vh;
-}
-
-.formContainer form {
-    background: rgba(11, 61, 145, 0.2);
-    display: flex;
-    justify-content: space-around;
     flex-direction: column;
-    width: 400px;
-    max-width: 400px;
-    padding: 30px;
-    border-radius: 20px;
-    height: 450px;
-    border: 1px solid rgba(252, 61, 33, 0.3);
+    gap: 0.75rem;
 }
 
-.formContainer form input, textarea {
-    outline: none;
-    border: 2px solid #FC3D21;
-    padding-left: 20px;
-    font-size: large;
-    background: rgba(255,255,255,0.1);
-    color: white;
+.resource-link {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--nasa-red);
+    text-decoration: none;
+    font-weight: 500;
+    padding: 0.75rem 1rem;
+    border-radius: 10px;
+    transition: all 0.3s ease;
+    border: 1px solid transparent;
 }
 
-.formContainer input {
-    height: 50px;
-    border-radius: 50px;
+.resource-link:hover {
+    background: rgba(252, 61, 33, 0.1);
+    border-color: var(--border-color);
+    transform: translateX(5px);
 }
 
-.formContainer textarea {
-    border-radius: 20px;
-    padding-top: 10px;
-    resize: none;
+/* FOOTER */
+.footer {
+    background: var(--gradient-primary);
+    padding: 60px 0 20px;
+    border-top: 1px solid var(--border-color);
 }
 
-.formContainer input::placeholder, .formContainer textarea::placeholder {
-    color: #ccc;
+.footer-content {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 4rem;
+    margin-bottom: 3rem;
 }
-/* END FORM */
+
+.footer-brand .nasa-brand {
+    margin-bottom: 1rem;
+}
+
+.footer-description {
+    color: var(--text-secondary);
+    line-height: 1.6;
+    max-width: 300px;
+}
+
+.footer-links {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+}
+
+.footer-column h4 {
+    color: var(--text-primary);
+    margin-bottom: 1rem;
+    font-weight: 600;
+}
+
+.footer-column a {
+    display: block;
+    color: var(--text-secondary);
+    text-decoration: none;
+    margin-bottom: 0.5rem;
+    transition: color 0.3s ease;
+}
+
+.footer-column a:hover {
+    color: var(--nasa-red);
+}
+
+.footer-bottom {
+    border-top: 1px solid var(--border-color);
+    padding-top: 2rem;
+    text-align: center;
+    color: var(--text-muted);
+    font-size: 0.9rem;
+}
+
+.footer-bottom p {
+    margin-bottom: 0.5rem;
+}
 
 /* RESPONSIVE DESIGN */
-@media (max-width: 1200px) {
-    .header, .landingPage, .trendingContainer, .mostContainer .mostPlayed, .resourcesContainer, .referencesContainer, .footer {
-        padding-left: 50px;
-        padding-right: 50px;
-    }
-    
-    .trendingCard .card, .mostCards .card, .card-link {
-        width: calc(50% - 20px);
-    }
-    
-    .resourcesGrid, .referencesList {
-        grid-template-columns: repeat(2, 1fr);
-    }
-}
-
 @media (max-width: 768px) {
-    .header, .landingPage, .trendingContainer, .mostContainer .mostPlayed, .resourcesContainer, .referencesContainer, .footer {
-        padding-left: 20px;
-        padding-right: 20px;
-    }
-    
-    .landingPage {
-        flex-direction: column;
-    }
-    
-    .trendingCard .card, .mostCards .card, .card-link {
-        width: 100%;
-    }
-    
-    .resourcesGrid, .referencesList {
-        grid-template-columns: 1fr;
-    }
-    
-    .headerLinks {
+    .nav-menu {
         display: none;
     }
     
-    .searchBar input {
-        width: 70%;
+    .hero-container {
+        grid-template-columns: 1fr;
+        text-align: center;
+        gap: 2rem;
     }
     
-    .searchBar .searchBtn {
-        position: relative;
-        left: 0;
-        margin-top: 10px;
+    .hero-title {
+        font-size: 2.5rem;
     }
     
-    .trendingCard .cardName h3 {
-        font-size: 14px;
+    .hero-stats {
+        justify-content: center;
+        gap: 2rem;
     }
     
-    .resourceLinks {
-        flex-direction: column;
-        align-items: center;
+    .research-grid,
+    .studies-grid,
+    .resources-grid {
+        grid-template-columns: 1fr;
     }
     
-    .resource-link {
-        width: 100%;
+    .footer-content {
+        grid-template-columns: 1fr;
+        gap: 2rem;
         text-align: center;
     }
     
-    .referencesContainer {
-        padding: 30px 20px;
-        border-radius: 50px;
+    .footer-links {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+    
+    .science-graphic {
+        width: 200px;
+        height: 200px;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 0 15px;
+    }
+    
+    .hero-title {
+        font-size: 2rem;
+    }
+    
+    .section-title {
+        font-size: 2rem;
+    }
+    
+    .search-container {
+        flex-direction: column;
+        gap: 1rem;
+        padding: 1rem;
+    }
+    
+    .search-btn {
+        width: 100%;
     }
 }
