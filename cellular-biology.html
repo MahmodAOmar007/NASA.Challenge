@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css">
+    <title>Cellular & Molecular Biology in Microgravity - NASA Space Biology</title>
+    <style>
+        .researchDetailContainer {
+            max-width: 1200px;
+            margin: 50px auto;
+            padding: 0 20px;
+        }
+
+        .researchDetail {
+            background: rgba(11, 61, 145, 0.1);
+            border-radius: 20px;
+            padding: 40px;
+            border: 1px solid rgba(252, 61, 33, 0.3);
+        }
+
+        .researchHeader {
+            display: flex;
+            align-items: center;
+            margin-bottom: 40px;
+            border-bottom: 2px solid #FC3D21;
+            padding-bottom: 20px;
+        }
+
+        .research-icon.large {
+            font-size: 80px;
+            margin-right: 30px;
+        }
+
+        .researchTitle .category {
+            color: #FC3D21;
+            font-weight: 600;
+            text-transform: uppercase;
+            font-size: 18px;
+        }
+
+        .researchTitle h1 {
+            margin: 10px 0 0 0;
+            font-size: 36px;
+            background: linear-gradient(90deg, #fff, #FC3D21);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .contentSection {
+            margin-bottom: 40px;
+            padding: 25px;
+            background: rgba(11, 61, 145, 0.15);
+            border-radius: 15px;
+            border-left: 4px solid #FC3D21;
+        }
+
+        .contentSection h2 {
+            color: #FC3D21;
+            margin-bottom: 20px;
+            font-size: 24px;
+            border-bottom: 1px solid rgba(252, 61, 33, 0.3);
+            padding-bottom: 10px;
+        }
+
+        .contentSection h3 {
+            color: #fff;
+            margin: 25px 0 15px 0;
+            font-size: 20px;
+        }
+
+        .contentSection p {
+            line-height: 1.8;
+            color: #e0e0e0;
+            font-size: 16px;
+            margin-bottom: 15px;
+        }
+
+        .contentSection ul {
+            color: #e0e0e0;
+            line-height: 1.8;
+            padding-left: 25px;
+            margin: 15px 0;
+        }
+
+        .contentSection li {
+            margin-bottom: 12px;
+            position: relative;
+        }
+
+        .contentSection li:before {
+            content: "•";
+            color: #FC3D21;
+            font-weight: bold;
+            display: inline-block;
+            width: 1em;
+            margin-left: -1em;
+        }
+
+        .impact-box {
+            background: rgba(252, 61, 33, 0.1);
+            border: 1px solid #FC3D21;
+            border-radius: 10px;
+            padding: 20px;
+            margin: 20px 0;
+        }
+
+        .impact-box h4 {
+            color: #FC3D21;
+            margin-bottom: 15px;
+            font-size: 18px;
+        }
+
+        .data-highlight {
+            background: linear-gradient(135deg, #0B3D91, #1a237e);
+            border-radius: 10px;
+            padding: 20px;
+            margin: 25px 0;
+            border: 1px solid rgba(252, 61, 33, 0.3);
+        }
+
+        .data-highlight p {
+            margin: 10px 0;
+            font-style: italic;
+        }
+
+        .key-finding {
+            background: rgba(11, 61, 145, 0.3);
+            border-left: 4px solid #FC3D21;
+            padding: 15px;
+            margin: 15px 0;
+            font-weight: 500;
+        }
+
+        .back-btn {
+            margin-top: 40px;
+            background-color: #0B3D91;
+            text-decoration: none;
+            display: inline-block;
+            padding: 15px 30px;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: medium;
+            text-transform: uppercase;
+            transition: .3s;
+        }
+
+        .back-btn:hover {
+            background-color: #1A56C7;
+            transform: translateY(-2px);
+        }
+
+        @media (max-width: 768px) {
+            .researchHeader {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .research-icon.large {
+                margin-right: 0;
+                margin-bottom: 20px;
+            }
+            
+            .researchDetail {
+                padding: 20px;
+            }
+            
+            .contentSection {
+                padding: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- HEADER -->
+    <div class="headerContainer">
+        <div class="header">
+            <a href="index.html" class="logo">
+                <div class="nasa-logo">NASA</div>
+            </a>
+            <div class="headerLinks">
+                <a href="index.html">Home</a>
+                <a href="index.html#research">Research Areas</a>
+                <a href="index.html#studies">Recent Studies</a>
+                <a href="contactUs.html">Contact NASA</a>
+                <button class="btn">Researcher Login</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- RESEARCH DETAIL PAGE -->
+    <div class="researchDetailContainer">
+        <div class="researchDetail">
+            <div class="researchHeader">
+                <div class="research-icon large">🔬</div>
+                <div class="researchTitle">
+                    <span class="category">Microgravity Research</span>
+                    <h1>Cellular & Molecular Biology in Microgravity</h1>
+                </div>
+            </div>
+
+            <div class="researchContent">
+                <!-- Section 1 -->
+                <div class="contentSection">
+                    <h2>1. Gene Expression Changes Under Microgravity or Simulated Microgravity</h2>
+                    <p>Multiple studies (via NASA GeneLab, npj Microgravity, etc.) show that genes in muscle, immune cells, etc. are significantly up- or down-regulated when exposed to microgravity vs ground control.</p>
+                    
+                    <div class="impact-box">
+                        <h4>Impact:</h4>
+                        <ul>
+                            <li>Altered expression of cytoskeleton and metabolic genes can lead to structural changes, decreased function in muscles, etc.</li>
+                            <li>Immune cell gene expression changes suggest immune dysregulation risk during spaceflight.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Section 2 -->
+                <div class="contentSection">
+                    <h2>2. Cytoskeletal Disruption & Cellular Structure Alteration</h2>
+                    <p>Cells under microgravity show disorganization of actin filaments, microtubules; mitochondria become clustered, cristae morphologies alter.</p>
+                    
+                    <div class="data-highlight">
+                        <p><strong>Experimental Data:</strong> Human lymphocyte (Jurkat) cells and insect cells (Drosophila) both show ~50% of cells with disrupted microtubule networks after hours of exposure.</p>
+                    </div>
+                    
+                    <div class="impact-box">
+                        <h4>Impact:</h4>
+                        <ul>
+                            <li>Disruption in cytoskeleton → impaired intracellular transport (e.g. mitochondria move less efficiently)</li>
+                            <li>Leads to increased apoptosis (cell death) in some cell types</li>
+                            <li>Impacts proliferation, tissue maintenance</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Section 3 -->
+                <div class="contentSection">
+                    <h2>3. Proteomics & Cellular Stress Responses</h2>
+                    <p>Studies (e.g. via NASA's proteomics datasets) show that microgravity induces ER (endoplasmic reticulum) stress and mitochondrial protection responses in primary cardiomyocytes.</p>
+                    
+                    <div class="impact-box">
+                        <h4>Impact:</h4>
+                        <ul>
+                            <li>Cellular stress responses can affect long-term cell viability</li>
+                            <li>May contribute to tissue aging, decline in organ functions in astronauts</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Section 4 -->
+                <div class="contentSection">
+                    <h2>Example Graphs / Data Figures</h2>
+                    <div class="data-highlight">
+                        <p><strong>Gene Expression Analysis:</strong> RNA sequencing data showing differential expression of cytoskeletal genes in microgravity conditions</p>
+                        <p><strong>Microscopy Data:</strong> Fluorescence images demonstrating microtubule network disruption in microgravity-exposed cells</p>
+                        <p><strong>Proteomic Profiles:</strong> Mass spectrometry data revealing stress response protein upregulation</p>
+                    </div>
+                </div>
+
+                <!-- Section 5 -->
+                <div class="contentSection">
+                    <h2>Implications for Research & Missions</h2>
+                    
+                    <h3>Human Health in Space:</h3>
+                    <p>These cellular changes can underlie muscle atrophy, immune dysfunction, bone loss, etc. Understanding specific gene/protein changes allows for targeted countermeasures (drugs, exercise, artificial gravity).</p>
+                    
+                    <h3>Aging & Disease Models:</h3>
+                    <p>Microgravity accelerates or mirrors some aging phenotypes: increased oxidative stress, autophagy, senescence. Can serve as models for aging or degenerative diseases on Earth.</p>
+                    
+                    <h3>Pathogen Risk Management:</h3>
+                    <p>Increased virulence means spacecraft microbial monitoring, sterilization, and possibly development of anti-virulence strategies will be more important.</p>
+                    
+                    <h3>Tissue Engineering & Biotech:</h3>
+                    <p>Altered gene expression can inform how tissues can be grown in microgravity (or simulated conditions), e.g., for regenerative medicine.</p>
+                </div>
+
+                <a href="index.html#research" class="btn back-btn">← Back to Research Areas</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- FOOTER  -->
+    <div class="footerContainer">
+        <div class="footer">
+            NASA Space Biology Program &copy; 2024 | Advancing Life Science Research for Space Exploration
+        </div>
+    </div>
+</body>
+</html>

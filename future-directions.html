@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css">
+    <title>Future Directions in Space Biology - NASA Space Biology</title>
+    <style>
+        .researchDetailContainer {
+            max-width: 1200px;
+            margin: 50px auto;
+            padding: 0 20px;
+        }
+
+        .researchDetail {
+            background: rgba(11, 61, 145, 0.1);
+            border-radius: 20px;
+            padding: 40px;
+            border: 1px solid rgba(252, 61, 33, 0.3);
+        }
+
+        .researchHeader {
+            display: flex;
+            align-items: center;
+            margin-bottom: 40px;
+            border-bottom: 2px solid #FC3D21;
+            padding-bottom: 20px;
+        }
+
+        .research-icon.large {
+            font-size: 80px;
+            margin-right: 30px;
+        }
+
+        .researchTitle .category {
+            color: #FC3D21;
+            font-weight: 600;
+            text-transform: uppercase;
+            font-size: 18px;
+        }
+
+        .researchTitle h1 {
+            margin: 10px 0 0 0;
+            font-size: 36px;
+            background: linear-gradient(90deg, #fff, #FC3D21);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .overview-box {
+            background: linear-gradient(135deg, #0B3D91, #1a237e);
+            border-radius: 15px;
+            padding: 30px;
+            margin: 30px 0;
+            border: 1px solid rgba(252, 61, 33, 0.3);
+            font-size: 18px;
+            line-height: 1.6;
+        }
+
+        .contentSection {
+            margin-bottom: 40px;
+            padding: 25px;
+            background: rgba(11, 61, 145, 0.15);
+            border-radius: 15px;
+            border-left: 4px solid #FC3D21;
+        }
+
+        .contentSection h2 {
+            color: #FC3D21;
+            margin-bottom: 20px;
+            font-size: 24px;
+            border-bottom: 1px solid rgba(252, 61, 33, 0.3);
+            padding-bottom: 10px;
+        }
+
+        .contentSection h3 {
+            color: #fff;
+            margin: 25px 0 15px 0;
+            font-size: 20px;
+        }
+
+        .contentSection p {
+            line-height: 1.8;
+            color: #e0e0e0;
+            font-size: 16px;
+            margin-bottom: 15px;
+        }
+
+        .contentSection ul {
+            color: #e0e0e0;
+            line-height: 1.8;
+            padding-left: 25px;
+            margin: 15px 0;
+        }
+
+        .contentSection li {
+            margin-bottom: 12px;
+            position: relative;
+        }
+
+        .contentSection li:before {
+            content: "•";
+            color: #FC3D21;
+            font-weight: bold;
+            display: inline-block;
+            width: 1em;
+            margin-left: -1em;
+        }
+
+        .impact-box {
+            background: rgba(252, 61, 33, 0.1);
+            border: 1px solid #FC3D21;
+            border-radius: 10px;
+            padding: 20px;
+            margin: 20px 0;
+        }
+
+        .impact-box h4 {
+            color: #FC3D21;
+            margin-bottom: 15px;
+            font-size: 18px;
+        }
+
+        .data-highlight {
+            background: linear-gradient(135deg, #0B3D91, #1a237e);
+            border-radius: 10px;
+            padding: 20px;
+            margin: 25px 0;
+            border: 1px solid rgba(252, 61, 33, 0.3);
+        }
+
+        .data-highlight p {
+            margin: 10px 0;
+            font-style: italic;
+        }
+
+        .research-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin: 25px 0;
+        }
+
+        .research-card {
+            background: rgba(11, 61, 145, 0.2);
+            border-radius: 10px;
+            padding: 20px;
+            border: 1px solid rgba(252, 61, 33, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        .research-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(252, 61, 33, 0.2);
+            border-color: #FC3D21;
+        }
+
+        .research-card h4 {
+            color: #FC3D21;
+            margin-bottom: 15px;
+            font-size: 18px;
+        }
+
+        .research-card p {
+            color: #e0e0e0;
+            line-height: 1.6;
+        }
+
+        .impact-list {
+            background: rgba(11, 61, 145, 0.3);
+            border-radius: 15px;
+            padding: 30px;
+            margin: 30px 0;
+            border: 2px solid #FC3D21;
+        }
+
+        .impact-list h3 {
+            color: #FC3D21;
+            text-align: center;
+            margin-bottom: 25px;
+            font-size: 24px;
+        }
+
+        .impact-item {
+            margin-bottom: 20px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid rgba(252, 61, 33, 0.3);
+        }
+
+        .impact-item:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+
+        .impact-item h4 {
+            color: #FC3D21;
+            margin-bottom: 10px;
+            font-size: 18px;
+        }
+
+        .back-btn {
+            margin-top: 40px;
+            background-color: #0B3D91;
+            text-decoration: none;
+            display: inline-block;
+            padding: 15px 30px;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: medium;
+            text-transform: uppercase;
+            transition: .3s;
+        }
+
+        .back-btn:hover {
+            background-color: #1A56C7;
+            transform: translateY(-2px);
+        }
+
+        @media (max-width: 768px) {
+            .researchHeader {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .research-icon.large {
+                margin-right: 0;
+                margin-bottom: 20px;
+            }
+            
+            .researchDetail {
+                padding: 20px;
+            }
+            
+            .contentSection {
+                padding: 15px;
+            }
+            
+            .research-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- HEADER -->
+    <div class="headerContainer">
+        <div class="header">
+            <a href="index.html" class="logo">
+                <div class="nasa-logo">NASA</div>
+            </a>
+            <div class="headerLinks">
+                <a href="index.html">Home</a>
+                <a href="index.html#research">Research Areas</a>
+                <a href="index.html#studies">Recent Studies</a>
+                <a href="contactUs.html">Contact NASA</a>
+                <button class="btn">Researcher Login</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- RESEARCH DETAIL PAGE -->
+    <div class="researchDetailContainer">
+        <div class="researchDetail">
+            <div class="researchHeader">
+                <div class="research-icon large">🚀</div>
+                <div class="researchTitle">
+                    <span class="category">Innovation</span>
+                    <h1>Future Directions in Space Biology</h1>
+                </div>
+            </div>
+
+            <div class="researchContent">
+                <!-- Overview -->
+                <div class="overview-box">
+                    <p><strong>What "Future Directions" Means in Space Biology</strong></p>
+                    <p>NASA and the broader scientific community are pushing forward with research that addresses the combined stresses of spaceflight (radiation, microgravity, isolation) with goals toward deep space, lunar missions, Mars missions, and long-duration habitation.</p>
+                    <p>This includes fundamental biology (how organisms adapt at genetic, cellular, system levels), developing hardware and life-support systems, figuring out biomarkers and countermeasures, and expanding experiments beyond low Earth orbit.</p>
+                </div>
+
+                <!-- Section 1 -->
+                <div class="contentSection">
+                    <h2>Key Emerging Research Areas & Results</h2>
+                    
+                    <div class="research-grid">
+                        <div class="research-card">
+                            <h4>Multi-Stressor Deep-Space Experiments</h4>
+                            <p>NASA is funding projects to test organisms under multiple spaceflight stressors together (e.g. reduced gravity + radiation) rather than each separately. The goal is to see how combined effects might be synergistic or unpredictable.</p>
+                            <div class="data-highlight">
+                                <p><strong>Current Focus:</strong> Early grants target studies on plants, small animals (vertebrates & invertebrates), and model systems over multiple generations.</p>
+                            </div>
+                        </div>
+
+                        <div class="research-card">
+                            <h4>Life Support & Bioregenerative Systems (BLiSS)</h4>
+                            <p>Developing closed-loop biological systems that recycle waste, water, CO₂, produce food and medicines, and support human life with minimal resupply. These systems are critical for lunar bases, Mars habitats, and deep space transit.</p>
+                            <div class="data-highlight">
+                                <p><strong>Research Focus:</strong> Using microbes, plants, engineered organisms to help with resource recovery and in-situ utilization.</p>
+                            </div>
+                        </div>
+
+                        <div class="research-card">
+                            <h4>Genotype, Epigenetics, and Individual Variation</h4>
+                            <p>Understanding how different genetic backgrounds (species & individual) respond differently to space stressors is becoming a priority. Not all organisms/networks/people respond the same.</p>
+                            <div class="data-highlight">
+                                <p><strong>Emerging Focus:</strong> Epigenetic changes (DNA methylation, regulation, chromatin changes) are being tracked more closely, to see lasting effects.</p>
+                            </div>
+                        </div>
+
+                        <div class="research-card">
+                            <h4>Health Monitoring, Biomarkers & Countermeasures</h4>
+                            <p>More work is being done to find molecular or physiological signals (biomarkers) that predict health risks (muscle loss, immune dysfunction, radiation damage) before they become serious.</p>
+                            <div class="data-highlight">
+                                <p><strong>Development Areas:</strong> Better countermeasures: physical (exercise, artificial gravity), chemical (drugs, antioxidants), nutritional, and habitat design.</p>
+                            </div>
+                        </div>
+
+                        <div class="research-card">
+                            <h4>Habitats, Hardware, & Experiment Platforms</h4>
+                            <p>Improved hardware for conducting biology in space: better culture chambers, sensors, automated tools.</p>
+                            <div class="data-highlight">
+                                <p><strong>Future Plans:</strong> More experiments planned to go outside the ISS, into lunar orbit, onto Artemis, maybe into Mars transit capsules.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Section 2 -->
+                <div class="contentSection">
+                    <h2>Impacts & Why They Matter</h2>
+                    
+                    <div class="impact-list">
+                        <h3>Strategic Importance of Future Space Biology Research</h3>
+                        
+                        <div class="impact-item">
+                            <h4>Safety & Mission Success</h4>
+                            <p>As missions go further and longer, risks increase. Understanding combined stressors and individual variation helps ensure astronauts remain healthy on Moon/Mars missions.</p>
+                        </div>
+
+                        <div class="impact-item">
+                            <h4>Sustainability in Space</h4>
+                            <p>Bioregenerative systems reduce dependence on Earth resupply — critical for lunar bases, Mars, or long transit.</p>
+                        </div>
+
+                        <div class="impact-item">
+                            <h4>Terrestrial Benefits</h4>
+                            <p>Many space biology findings (on stress, aging, immune response, epigenetics) have parallels on Earth — advancing medical research, aging science, environmental stress resilience.</p>
+                        </div>
+
+                        <div class="impact-item">
+                            <h4>New Science & Innovation</h4>
+                            <p>By pushing boundaries (e.g. multi-generation studies, epigenetic tracking, deep-space biology), we build new tools, new models, and possibly discover new fundamental biology.</p>
+                        </div>
+
+                        <div class="impact-item">
+                            <h4>Policy, Infrastructure, Funding Shifts</h4>
+                            <p>The Decadal Survey 2023-2032 emphasizes increasing investment, infrastructure, workforce in biological and physical sciences — recognizing that these are foundational for future exploration.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <a href="index.html#research" class="btn back-btn">← Back to Research Areas</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- FOOTER  -->
+    <div class="footerContainer">
+        <div class="footer">
+            NASA Space Biology Program &copy; 2024 | Advancing Life Science Research for Space Exploration
+        </div>
+    </div>
+</body>
+</html>
