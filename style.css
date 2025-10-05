@@ -167,15 +167,11 @@ body {
 }
 
 .hero-title {
-    font-size: 3.2rem;
+    font-size: 3.5rem;
     font-weight: 700;
     line-height: 1.2;
     margin-bottom: 1.5rem;
-    color: var(--text-primary);
-}
-
-.title-highlight {
-    background: linear-gradient(135deg, var(--nasa-red) 0%, #ff6b4a 100%);
+    background: linear-gradient(135deg, #fff 0%, var(--nasa-red) 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
@@ -183,67 +179,70 @@ body {
 .hero-description {
     font-size: 1.2rem;
     color: var(--text-secondary);
-    margin-bottom: 2.5rem;
-    line-height: 1.7;
+    margin-bottom: 2rem;
+    line-height: 1.6;
 }
 
-.hero-cta {
-    display: flex;
-    gap: 1rem;
-    margin-bottom: 3rem;
-}
-
-.cta-primary, .cta-secondary {
+.search-container {
+    position: relative;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 50px;
+    padding: 1rem 1.5rem;
     display: flex;
     align-items: center;
-    gap: 0.5rem;
-    padding: 1rem 2rem;
+    gap: 1rem;
+    border: 1px solid var(--border-color);
+    backdrop-filter: blur(10px);
+}
+
+.search-container i {
+    color: var(--text-muted);
+}
+
+.search-container input {
+    flex: 1;
+    background: none;
+    border: none;
+    color: var(--text-primary);
+    font-size: 1rem;
+    outline: none;
+}
+
+.search-container input::placeholder {
+    color: var(--text-muted);
+}
+
+.search-btn {
+    background: var(--nasa-red);
+    color: white;
+    border: none;
+    padding: 0.75rem 1.5rem;
     border-radius: 25px;
     font-weight: 600;
     cursor: pointer;
     transition: all 0.3s ease;
-    border: none;
-    font-size: 1rem;
 }
 
-.cta-primary {
-    background: var(--nasa-red);
-    color: white;
-}
-
-.cta-primary:hover {
+.search-btn:hover {
     background: #D1321A;
-    transform: translateY(-2px);
-    box-shadow: 0 10px 25px rgba(252, 61, 33, 0.3);
-}
-
-.cta-secondary {
-    background: transparent;
-    color: var(--text-primary);
-    border: 2px solid var(--border-color);
-}
-
-.cta-secondary:hover {
-    background: rgba(255, 255, 255, 0.1);
-    border-color: var(--nasa-red);
     transform: translateY(-2px);
 }
 
 .hero-stats {
     display: flex;
     gap: 3rem;
+    margin-top: 3rem;
 }
 
 .stat {
-    text-align: left;
+    text-align: center;
 }
 
 .stat-number {
-    font-size: 2.2rem;
+    font-size: 2rem;
     font-weight: 700;
     color: var(--nasa-red);
     margin-bottom: 0.5rem;
-    line-height: 1;
 }
 
 .stat-label {
@@ -252,211 +251,65 @@ body {
     font-weight: 500;
 }
 
-/* MOON 3D VISUAL */
 .hero-visual {
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.science-graphic {
     position: relative;
-}
-
-.moon-3d {
-    position: relative;
-    width: 400px;
-    height: 400px;
-}
-
-.moon-sphere {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 280px;
-    height: 280px;
-    background: linear-gradient(135deg, #8c8c8c 0%, #666666 50%, #4d4d4d 100%);
-    border-radius: 50%;
-    box-shadow: 
-        inset -20px -20px 40px rgba(0, 0, 0, 0.5),
-        inset 10px 10px 20px rgba(255, 255, 255, 0.2),
-        0 0 60px rgba(252, 61, 33, 0.3);
-    animation: rotate-moon 60s linear infinite;
-}
-
-.moon-crater {
-    position: absolute;
-    background: rgba(0, 0, 0, 0.3);
-    border-radius: 50%;
-    box-shadow: inset 2px 2px 4px rgba(255, 255, 255, 0.1);
-}
-
-.crater-1 {
-    width: 40px;
-    height: 40px;
-    top: 20%;
-    left: 30%;
-}
-
-.crater-2 {
-    width: 25px;
-    height: 25px;
-    top: 60%;
-    left: 20%;
-}
-
-.crater-3 {
-    width: 35px;
-    height: 35px;
-    top: 40%;
-    left: 60%;
-}
-
-.crater-4 {
-    width: 20px;
-    height: 20px;
-    top: 70%;
-    left: 70%;
-}
-
-.crater-5 {
-    width: 30px;
-    height: 30px;
-    top: 30%;
-    left: 80%;
-}
-
-.moon-orbit {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 380px;
-    height: 380px;
-    border: 1px dashed rgba(255, 255, 255, 0.2);
-    border-radius: 50%;
-    animation: rotate-orbit 30s linear infinite;
-}
-
-.satellite {
-    position: absolute;
-    top: -10px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 20px;
-    height: 20px;
-    background: var(--nasa-red);
-    border-radius: 50%;
-    box-shadow: 0 0 20px var(--nasa-red);
-}
-
-@keyframes rotate-moon {
-    from { transform: translate(-50%, -50%) rotate(0deg); }
-    to { transform: translate(-50%, -50%) rotate(360deg); }
-}
-
-@keyframes rotate-orbit {
-    from { transform: translate(-50%, -50%) rotate(0deg); }
-    to { transform: translate(-50%, -50%) rotate(360deg); }
-}
-
-/* MISSION SECTION */
-.mission-section {
-    padding: 100px 0;
-    background: var(--bg-dark);
-}
-
-.mission-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 4rem;
-    align-items: center;
-}
-
-.mission-content h2 {
-    font-size: 2.5rem;
-    font-weight: 700;
-    margin-bottom: 2rem;
-    color: var(--text-primary);
-}
-
-.mission-lead {
-    font-size: 1.3rem;
-    color: var(--text-secondary);
-    margin-bottom: 3rem;
-    line-height: 1.7;
-    font-weight: 400;
-}
-
-.mission-features {
-    display: flex;
-    flex-direction: column;
-    gap: 2rem;
-}
-
-.feature {
-    display: flex;
-    align-items: flex-start;
-    gap: 1.5rem;
-}
-
-.feature i {
-    font-size: 2rem;
-    color: var(--nasa-red);
-    margin-top: 0.5rem;
-}
-
-.feature h4 {
-    font-size: 1.2rem;
-    font-weight: 600;
-    margin-bottom: 0.5rem;
-    color: var(--text-primary);
-}
-
-.feature p {
-    color: var(--text-secondary);
-    line-height: 1.6;
-}
-
-.mission-visual {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.dna-animation {
     width: 300px;
     height: 300px;
-    position: relative;
 }
 
-.dna-strand {
+.molecule, .orbit, .cell {
     position: absolute;
+    border-radius: 50%;
+}
+
+.molecule {
+    width: 100px;
+    height: 100px;
+    background: rgba(252, 61, 33, 0.3);
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 100px;
+    animation: float 6s ease-in-out infinite;
+}
+
+.orbit {
+    width: 200px;
     height: 200px;
-    animation: dna-rotate 8s linear infinite;
+    border: 2px dashed rgba(255, 255, 255, 0.3);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    animation: rotate 20s linear infinite;
 }
 
-.nucleotide {
-    position: absolute;
-    width: 12px;
-    height: 12px;
-    background: var(--nasa-red);
-    border-radius: 50%;
-    box-shadow: 0 0 10px var(--nasa-red);
+.cell {
+    width: 60px;
+    height: 60px;
+    background: rgba(11, 61, 145, 0.5);
+    top: 20%;
+    left: 20%;
+    animation: pulse 4s ease-in-out infinite;
 }
 
-.nucleotide:nth-child(1) { top: 0%; left: 50%; }
-.nucleotide:nth-child(2) { top: 20%; left: 30%; }
-.nucleotide:nth-child(3) { top: 40%; left: 50%; }
-.nucleotide:nth-child(4) { top: 60%; left: 30%; }
-.nucleotide:nth-child(5) { top: 80%; left: 50%; }
-.nucleotide:nth-child(6) { top: 100%; left: 30%; }
+@keyframes float {
+    0%, 100% { transform: translate(-50%, -50%) scale(1); }
+    50% { transform: translate(-50%, -55%) scale(1.05); }
+}
 
-@keyframes dna-rotate {
-    from { transform: translate(-50%, -50%) rotateY(0deg); }
-    to { transform: translate(-50%, -50%) rotateY(360deg); }
+@keyframes rotate {
+    from { transform: translate(-50%, -50%) rotate(0deg); }
+    to { transform: translate(-50%, -50%) rotate(360deg); }
+}
+
+@keyframes pulse {
+    0%, 100% { transform: scale(1); opacity: 0.7; }
+    50% { transform: scale(1.1); opacity: 1; }
 }
 
 /* SECTIONS */
@@ -492,13 +345,13 @@ body {
 
 /* RESEARCH GRID */
 .research-section {
-    padding: 100px 0;
-    background: var(--gradient-dark);
+    padding: 80px 0;
+    background: var(--bg-dark);
 }
 
 .research-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
     gap: 2rem;
 }
 
@@ -506,15 +359,12 @@ body {
     background: var(--bg-card);
     border: 1px solid var(--border-color);
     border-radius: 20px;
-    padding: 2.5rem;
+    padding: 2rem;
     text-decoration: none;
     color: inherit;
     transition: all 0.3s ease;
     position: relative;
     overflow: hidden;
-    display: flex;
-    flex-direction: column;
-    height: 100%;
 }
 
 .research-card::before {
@@ -533,32 +383,26 @@ body {
 }
 
 .research-card:hover {
-    transform: translateY(-8px);
+    transform: translateY(-5px);
     border-color: var(--nasa-red);
-    box-shadow: 0 15px 40px rgba(252, 61, 33, 0.25);
+    box-shadow: 0 10px 30px rgba(252, 61, 33, 0.2);
 }
 
 .card-icon {
-    width: 70px;
-    height: 70px;
+    width: 60px;
+    height: 60px;
     background: rgba(252, 61, 33, 0.1);
-    border-radius: 18px;
+    border-radius: 15px;
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-bottom: 2rem;
+    margin-bottom: 1.5rem;
     color: var(--nasa-red);
-    font-size: 1.8rem;
-}
-
-.card-content {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
+    font-size: 1.5rem;
 }
 
 .research-card h3 {
-    font-size: 1.4rem;
+    font-size: 1.3rem;
     font-weight: 600;
     margin-bottom: 1rem;
     color: var(--text-primary);
@@ -566,9 +410,8 @@ body {
 
 .research-card p {
     color: var(--text-secondary);
-    margin-bottom: 2rem;
+    margin-bottom: 1.5rem;
     line-height: 1.6;
-    flex: 1;
 }
 
 .card-footer {
@@ -590,19 +433,19 @@ body {
 }
 
 .research-card:hover .fa-arrow-right {
-    transform: translateX(8px);
+    transform: translateX(5px);
 }
 
 /* STUDIES SECTION */
 .studies-section {
-    padding: 100px 0;
-    background: var(--bg-dark);
+    padding: 80px 0;
+    background: var(--gradient-dark);
 }
 
 .studies-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
-    gap: 2.5rem;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 2rem;
 }
 
 .study-card {
@@ -611,114 +454,59 @@ body {
     border-radius: 20px;
     overflow: hidden;
     transition: all 0.3s ease;
-    position: relative;
 }
 
 .study-card:hover {
-    transform: translateY(-8px);
+    transform: translateY(-5px);
     border-color: var(--nasa-red);
-    box-shadow: 0 15px 40px rgba(252, 61, 33, 0.25);
-}
-
-.study-badge {
-    position: absolute;
-    top: 1rem;
-    right: 1rem;
-    background: var(--nasa-red);
-    color: white;
-    padding: 0.5rem 1rem;
-    border-radius: 15px;
-    font-size: 0.8rem;
-    font-weight: 600;
-    z-index: 2;
+    box-shadow: 0 10px 30px rgba(252, 61, 33, 0.2);
 }
 
 .study-image {
-    height: 140px;
+    height: 120px;
     background: var(--gradient-primary);
     display: flex;
     align-items: center;
     justify-content: center;
     color: white;
-    font-size: 3rem;
-    position: relative;
-    overflow: hidden;
-}
-
-.study-image::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: linear-gradient(45deg, rgba(252, 61, 33, 0.3), transparent);
+    font-size: 2.5rem;
 }
 
 .study-content {
-    padding: 2.5rem;
+    padding: 2rem;
 }
 
 .study-category {
     display: inline-block;
     background: rgba(252, 61, 33, 0.1);
     color: var(--nasa-red);
-    padding: 0.5rem 1rem;
+    padding: 0.25rem 0.75rem;
     border-radius: 15px;
     font-size: 0.8rem;
     font-weight: 600;
-    margin-bottom: 1.5rem;
+    margin-bottom: 1rem;
 }
 
 .study-content h3 {
-    font-size: 1.4rem;
+    font-size: 1.3rem;
     font-weight: 600;
     margin-bottom: 1rem;
     color: var(--text-primary);
-    line-height: 1.4;
 }
 
 .study-content p {
     color: var(--text-secondary);
-    margin-bottom: 2rem;
+    margin-bottom: 1.5rem;
     line-height: 1.6;
 }
 
 .study-meta {
     display: flex;
-    flex-direction: column;
-    gap: 0.75rem;
-    margin-bottom: 1.5rem;
-}
-
-.meta-item {
-    display: flex;
+    justify-content: space-between;
     align-items: center;
-    gap: 0.5rem;
-    color: var(--text-muted);
+    margin-bottom: 1.5rem;
     font-size: 0.9rem;
-}
-
-.meta-item i {
-    color: var(--nasa-red);
-    width: 16px;
-}
-
-.study-tags {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.5rem;
-    margin-bottom: 2rem;
-}
-
-.tag {
-    background: rgba(252, 61, 33, 0.1);
-    color: var(--nasa-red);
-    padding: 0.4rem 0.8rem;
-    border-radius: 12px;
-    font-size: 0.8rem;
-    font-weight: 500;
-    border: 1px solid rgba(252, 61, 33, 0.2);
+    color: var(--text-muted);
 }
 
 .study-btn {
@@ -726,33 +514,28 @@ body {
     background: transparent;
     color: var(--nasa-red);
     border: 2px solid var(--nasa-red);
-    padding: 1rem 2rem;
+    padding: 0.75rem 1.5rem;
     border-radius: 25px;
     font-weight: 600;
     cursor: pointer;
     transition: all 0.3s ease;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 0.5rem;
 }
 
 .study-btn:hover {
     background: var(--nasa-red);
     color: white;
     transform: translateY(-2px);
-    box-shadow: 0 8px 20px rgba(252, 61, 33, 0.3);
 }
 
 /* RESOURCES SECTION */
 .resources-section {
-    padding: 100px 0;
-    background: var(--gradient-dark);
+    padding: 80px 0;
+    background: var(--bg-dark);
 }
 
 .resources-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 2rem;
 }
 
@@ -760,74 +543,69 @@ body {
     background: var(--bg-card);
     border: 1px solid var(--border-color);
     border-radius: 20px;
-    padding: 2.5rem;
+    padding: 2rem;
     transition: all 0.3s ease;
-    display: flex;
-    flex-direction: column;
-    height: 100%;
 }
 
 .resource-card:hover {
-    transform: translateY(-8px);
+    transform: translateY(-5px);
     border-color: var(--nasa-red);
-    box-shadow: 0 15px 40px rgba(252, 61, 33, 0.25);
+    box-shadow: 0 10px 30px rgba(252, 61, 33, 0.2);
 }
 
 .resource-header {
     display: flex;
     align-items: center;
-    gap: 1.2rem;
+    gap: 1rem;
     margin-bottom: 1.5rem;
 }
 
 .resource-header i {
-    font-size: 2.2rem;
+    font-size: 2rem;
     color: var(--nasa-red);
 }
 
 .resource-header h3 {
-    font-size: 1.3rem;
+    font-size: 1.2rem;
     font-weight: 600;
     color: var(--text-primary);
 }
 
 .resource-card p {
     color: var(--text-secondary);
-    margin-bottom: 2.5rem;
+    margin-bottom: 2rem;
     line-height: 1.6;
-    flex: 1;
 }
 
 .resource-links {
     display: flex;
     flex-direction: column;
-    gap: 1rem;
+    gap: 0.75rem;
 }
 
 .resource-link {
     display: flex;
     align-items: center;
-    gap: 0.75rem;
+    gap: 0.5rem;
     color: var(--nasa-red);
     text-decoration: none;
     font-weight: 500;
-    padding: 1rem 1.2rem;
-    border-radius: 12px;
+    padding: 0.75rem 1rem;
+    border-radius: 10px;
     transition: all 0.3s ease;
     border: 1px solid transparent;
-    background: rgba(252, 61, 33, 0.05);
 }
 
 .resource-link:hover {
     background: rgba(252, 61, 33, 0.1);
     border-color: var(--border-color);
-    transform: translateX(8px);
+    transform: translateX(5px);
 }
 
 /* FOOTER */
 .footer {
     background: var(--gradient-primary);
-    padding: 80px 0 30px;
+    padding: 60px 0 20px;
     border-top: 1px solid var(--border-color);
 }
 
@@ -839,114 +617,52 @@ body {
 }
 
 .footer-brand .nasa-brand {
-    margin-bottom: 1.5rem;
+    margin-bottom: 1rem;
 }
 
 .footer-description {
     color: var(--text-secondary);
     line-height: 1.6;
     max-width: 300px;
-    margin-bottom: 2rem;
-}
-
-.social-links {
-    display: flex;
-    gap: 1rem;
-}
-
-.social-link {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 40px;
-    height: 40px;
-    background: rgba(255, 255, 255, 0.1);
-    border-radius: 50%;
-    color: var(--text-secondary);
-    text-decoration: none;
-    transition: all 0.3s ease;
-}
-
-.social-link:hover {
-    background: var(--nasa-red);
-    color: white;
-    transform: translateY(-2px);
 }
 
 .footer-links {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 3rem;
+    gap: 2rem;
 }
 
 .footer-column h4 {
     color: var(--text-primary);
-    margin-bottom: 1.5rem;
+    margin-bottom: 1rem;
     font-weight: 600;
-    font-size: 1.1rem;
 }
 
 .footer-column a {
     display: block;
     color: var(--text-secondary);
     text-decoration: none;
-    margin-bottom: 0.75rem;
-    transition: all 0.3s ease;
-    padding: 0.25rem 0;
+    margin-bottom: 0.5rem;
+    transition: color 0.3s ease;
 }
 
 .footer-column a:hover {
     color: var(--nasa-red);
-    transform: translateX(5px);
 }
 
 .footer-bottom {
     border-top: 1px solid var(--border-color);
     padding-top: 2rem;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    text-align: center;
     color: var(--text-muted);
     font-size: 0.9rem;
 }
 
-.footer-meta {
-    display: flex;
-    gap: 2rem;
-}
-
-.footer-meta a {
-    color: var(--text-muted);
-    text-decoration: none;
-    transition: color 0.3s ease;
-}
-
-.footer-meta a:hover {
-    color: var(--nasa-red);
+.footer-bottom p {
+    margin-bottom: 0.5rem;
 }
 
 /* RESPONSIVE DESIGN */
-@media (max-width: 1024px) {
-    .hero-title {
-        font-size: 2.8rem;
-    }
-    
-    .mission-grid {
-        grid-template-columns: 1fr;
-        gap: 3rem;
-    }
-    
-    .moon-3d {
-        width: 350px;
-        height: 350px;
-    }
-    
-    .moon-sphere {
-        width: 240px;
-        height: 240px;
-    }
-}
-
 @media (max-width: 768px) {
     .nav-menu {
         display: none;
@@ -955,16 +671,11 @@ body {
     .hero-container {
         grid-template-columns: 1fr;
         text-align: center;
-        gap: 3rem;
+        gap: 2rem;
     }
     
     .hero-title {
-        font-size: 2.3rem;
-    }
-    
-    .hero-cta {
-        justify-content: center;
-        flex-wrap: wrap;
+        font-size: 2.5rem;
     }
     
     .hero-stats {
@@ -980,38 +691,18 @@ body {
     
     .footer-content {
         grid-template-columns: 1fr;
-        gap: 3rem;
+        gap: 2rem;
         text-align: center;
     }
     
     .footer-links {
         grid-template-columns: 1fr;
-        gap: 2rem;
-    }
-    
-    .footer-bottom {
-        flex-direction: column;
         gap: 1rem;
-        text-align: center;
     }
     
-    .footer-meta {
-        justify-content: center;
-    }
-    
-    .moon-3d {
-        width: 280px;
-        height: 280px;
-    }
-    
-    .moon-sphere {
+    .science-graphic {
         width: 200px;
         height: 200px;
-    }
-    
-    .moon-orbit {
-        width: 260px;
-        height: 260px;
     }
 }
 
@@ -1028,40 +719,13 @@ body {
         font-size: 2rem;
     }
     
-    .hero-cta {
+    .search-container {
         flex-direction: column;
-        align-items: center;
+        gap: 1rem;
+        padding: 1rem;
     }
     
-    .cta-primary, .cta-secondary {
+    .search-btn {
         width: 100%;
-        max-width: 280px;
-        justify-content: center;
-    }
-    
-    .hero-stats {
-        flex-direction: column;
-        gap: 1.5rem;
-    }
-    
-    .research-card,
-    .study-card,
-    .resource-card {
-        padding: 2rem;
-    }
-    
-    .moon-3d {
-        width: 220px;
-        height: 220px;
-    }
-    
-    .moon-sphere {
-        width: 160px;
-        height: 160px;
-    }
-    
-    .moon-orbit {
-        width: 200px;
-        height: 200px;
     }
 }
