@@ -195,12 +195,12 @@ body {
     padding-bottom: 40px;
 }
 
-.trendingHeader h1, .mostHeader h1, .resourcesHeader h1 {
+.trendingHeader h1, .mostHeader h1, .resourcesHeader h1, .referencesHeader h1 {
     margin-top: 0;
     font-size: 36px;
 }
 
-.trendingContainer span, .mostContainer span, .resourcesHeader span {
+.trendingContainer span, .mostContainer span, .resourcesHeader span, .referencesHeader span {
     text-transform: uppercase;
     color: #FC3D21;
     font-weight: 600;
@@ -451,6 +451,83 @@ body {
 
 /* END NASA RESOURCES */
 
+/* REFERENCES SECTION */
+.referencesContainer {
+    margin: auto;
+    max-width: 1300px;
+    margin-top: 100px;
+    padding: 50px 20px;
+    background: linear-gradient(135deg, #0a0e29 0%, #1a237e 100%);
+    border-radius: 100px;
+    border: 1px solid rgba(252, 61, 33, 0.2);
+}
+
+.referencesHeader {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.referencesHeader h1 {
+    margin-bottom: 20px;
+}
+
+.referencesDescription {
+    color: #e0e0e0;
+    font-size: 18px;
+    max-width: 800px;
+    margin: 0 auto;
+    line-height: 1.6;
+}
+
+.referencesList {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 40px;
+    margin-top: 40px;
+}
+
+.referenceCategory {
+    background: rgba(11, 61, 145, 0.2);
+    border-radius: 20px;
+    padding: 30px;
+    border: 1px solid rgba(252, 61, 33, 0.3);
+}
+
+.referenceCategory h3 {
+    color: #FC3D21;
+    margin-bottom: 20px;
+    font-size: 22px;
+    border-bottom: 2px solid rgba(252, 61, 33, 0.3);
+    padding-bottom: 10px;
+}
+
+.referenceCategory ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.referenceCategory li {
+    color: #e0e0e0;
+    padding: 10px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    line-height: 1.6;
+}
+
+.referenceCategory li:last-child {
+    border-bottom: none;
+}
+
+.referenceCategory li:before {
+    content: "•";
+    color: #FC3D21;
+    font-weight: bold;
+    display: inline-block;
+    width: 1em;
+    margin-left: -1em;
+}
+
+/* END REFERENCES SECTION */
+
 /* FOOTER */
 .footerContainer {
     background: linear-gradient(135deg, #0B3D91 0%, #1a237e 100%);
@@ -523,7 +600,7 @@ body {
 
 /* RESPONSIVE DESIGN */
 @media (max-width: 1200px) {
-    .header, .landingPage, .trendingContainer, .mostContainer .mostPlayed, .resourcesContainer, .footer {
+    .header, .landingPage, .trendingContainer, .mostContainer .mostPlayed, .resourcesContainer, .referencesContainer, .footer {
         padding-left: 50px;
         padding-right: 50px;
     }
@@ -532,13 +609,13 @@ body {
         width: calc(50% - 20px);
     }
     
-    .resourcesGrid {
+    .resourcesGrid, .referencesList {
         grid-template-columns: repeat(2, 1fr);
     }
 }
 
 @media (max-width: 768px) {
-    .header, .landingPage, .trendingContainer, .mostContainer .mostPlayed, .resourcesContainer, .footer {
+    .header, .landingPage, .trendingContainer, .mostContainer .mostPlayed, .resourcesContainer, .referencesContainer, .footer {
         padding-left: 20px;
         padding-right: 20px;
     }
@@ -551,7 +628,7 @@ body {
         width: 100%;
     }
     
-    .resourcesGrid {
+    .resourcesGrid, .referencesList {
         grid-template-columns: 1fr;
     }
     
@@ -581,5 +658,10 @@ body {
     .resource-link {
         width: 100%;
         text-align: center;
+    }
+    
+    .referencesContainer {
+        padding: 30px 20px;
+        border-radius: 50px;
     }
 }
